@@ -3,9 +3,7 @@ from random import randrange
 import vk_api
 from vk_api.longpoll import VkLongPoll, VkEventType
 
-
-from config import token
-#token = input('Token: ')
+token = input('Token: ')
 
 vk = vk_api.VkApi(token=token)
 longpoll = VkLongPoll(vk)
