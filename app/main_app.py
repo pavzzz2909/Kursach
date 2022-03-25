@@ -3,9 +3,6 @@ from app.users import users_search, users_get
 
 
 
-from pprint import pprint
-
-
 def cur_user(user_id):
     dict_cur_user = users_get(user_id)
     for key in dict_cur_user.keys():
@@ -33,8 +30,6 @@ def cur_user(user_id):
 
 
 def search_people_and_photos(sex, age_at, age_to, city, status):
-    '''
-    '''
     dict_all_persons = users_search(sex, age_at, age_to, city, status)
     for key in dict_all_persons.keys():
         dict = photos_getAll(key)

@@ -34,8 +34,7 @@ def users_search(sex, age_at, age_to, city, status):
                                           'age_from': age_at,
                                           'age_to': age_to,
                                           'has_photo': 1,
-                                          'count': 10,
-                                          'online': 1,
+                                          'count': 50,
                                           'fields': 'verified, sex, bdate, city, home_town, has_photo, online, domain, nickname, screen_name, maiden_name, friend_status',
                                           'city': city})
     for item in response['items']:

@@ -2,4 +2,6 @@
 __pycache__/
 
 start.py
-config.py
+config_orig.py
+soc_vkontakte.py
+vk_config.v2.json

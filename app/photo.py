@@ -4,21 +4,6 @@ from config.imports import *
 def photos_getAll(owner_id):
     ''' Возвращает все фотографии пользователя или сообщества в антихронологическом порядке.
     Проводит сортировку по количеству лайков и отбирает три с наибольшими значениями.
-    {'album_id': ,
-    'date': ,
-    'id': ,
-    'owner_id': ,
-    'post_id': ,
-    'sizes': [{'height': , 'url': '', 'type': '', 'width': },
-              {'height': , 'url': '', 'type': '', 'width': },
-              {'height': , 'url': '', 'type': '', 'width': },
-              {'height': , 'url': '', 'type': '', 'width': },
-              {'height': , 'url': '', 'type': '', 'width': },
-              {'height': , 'url': '', 'type': '', 'width': },
-              {'height': , 'url': '', 'type': '', 'width': }],
-    'text': '',
-    'likes': {'user_likes': , 'count': },
-    'reposts': {'count': 0}}
     '''
     dict = {}
     link_profile = 'https://vk.com/id'
@@ -41,7 +26,6 @@ def photos_getAll(owner_id):
     data = data.sort_values(by='likes', ascending=False)
     data1 = data.head(3)
     dict2 = data1.to_dict('index')
-    print(dict2)
     return dict2
 
 
@@ -51,7 +35,7 @@ def photos_getMessagesUploadServer():
     '''
     dict = {}
     link_profile = 'https://vk.com/id'
-    vk = vk_api.VkApi(token=access_token_211758996)
+    vk = vk_api.VkApi(token=access_token_group)
     response = vk.method('photos.getMessagesUploadServer',
                           {'group_id': group_id})
     return response
